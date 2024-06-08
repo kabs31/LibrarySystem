@@ -11,31 +11,35 @@ public class MenuHandler {
             boolean exit = false;
 
             while (!exit) {
+                try {
                 printMenu();
                 int choice = scanner.nextInt();
                 scanner.nextLine(); // Consume newline
 
-                switch (choice) {
-                    case 1:
-                        addItem();
-                        break;
-                    case 2:
-                        removeItem();
-                        break;
-                    case 3:
-                        borrowItem();
-                        break;
-                    case 4:
-                        returnItem();
-                        break;
-                    case 5:
-                        displayItems();
-                        break;
-                    case 6:
-                        exit = true;
-                        break;
-                    default:
-                        System.out.println("Invalid choice. Please try again.");
+                    switch (choice) {
+                        case 1:
+                            addItem();
+                            break;
+                        case 2:
+                            removeItem();
+                            break;
+                        case 3:
+                            borrowItem();
+                            break;
+                        case 4:
+                            returnItem();
+                            break;
+                        case 5:
+                            displayItems();
+                            break;
+                        case 6:
+                            exit = true;
+                            break;
+                        default:
+                            System.out.println("Invalid choice. Please try again.");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Exception occurred: " + e.getMessage());
                 }
             }
 
